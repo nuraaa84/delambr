@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Калькулятор площади по центральным углам</title>
+    <title>Орталық бұрыштар бойынша аудан калькуляторы</title>
     <style>
         body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; background-color: #f4f4f9; }
         .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 400px; width: 100%; }
@@ -21,8 +21,7 @@
 <body>
 
 <div class="card">
-    <h2>Площадь вписанного многоугольника</h2>
-    <p class="formula">Формула: $$S = \frac{R^2}{2} \sum \sin(\alpha_n)$$</p>
+    <h2>Іштей сызылған көпбұрыштың ауданы</h2>
 
     <div class="input-group">
         <label for="radius">Радиус окружности (R):</label>
@@ -30,15 +29,15 @@
     </div>
 
     <div class="input-group">
-        <label for="angles">Центральные углы (через запятую или пробел):</label>
-        <textarea id="angles" placeholder="Например: 90, 90, 90, 90"></textarea>
-        <small style="color: #888;">Введите углы в градусах</small>
+        <label for="angles">Орталық бұрыштар (үтір немесе бос орын арқылы бөлінген):</label>
+        <textarea id="angles" placeholder="Мысалы: 90, 90, 90, 90"></textarea>
+        <small style="color: #888;">Бұрыштарды градуспен енгізіңіз</small>
     </div>
 
-    <button onclick="calculateArea()">Рассчитать площадь</button>
+    <button onclick="calculateArea()">Ауданын есептеу</button>
 
     <div id="resultBox" class="result">
-        <strong>Результат:</strong> <span id="output">0</span>
+        <strong>Нәтиже:</strong> <span id="output">0</span>
     </div>
 </div>
 
@@ -51,7 +50,7 @@
         const angles = anglesText.split(/[\s,]+/).map(Number).filter(n => !isNaN(n) && n !== 0);
 
         if (isNaN(R) || angles.length === 0) {
-            alert("Пожалуйста, введите корректный радиус и хотя бы один угол.");
+            alert("Жарамды радиусты және кемінде бір бұрышты енгізіңіз.");
             return;
         }
 
